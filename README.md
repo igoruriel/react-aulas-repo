@@ -1,0 +1,1 @@
+# Lidando com arquivos estáticos
