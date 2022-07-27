@@ -13,12 +13,12 @@
       width: 100%;
       margin-bottom: 16px;
   
-      label {
+      .inputLabel {
         margin-bottom: 8px;
         font-size: 1.25rem;
       }
   
-      input {
+      .input {
         width: 100%;
         padding: 8px 12px 4px;
         box-sizing: border-box;
@@ -48,11 +48,11 @@
           width: 40%;
         }
   
-        label {
+        .inputLabel {
           font-size: 2rem;
         }
   
-        input {
+        .input {
           height: 100%;
           font-size: 1.75rem;
         }

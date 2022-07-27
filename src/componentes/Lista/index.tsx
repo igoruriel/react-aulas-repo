@@ -1,27 +1,19 @@
+import { PropsTarefas } from '../../interfaces/tarefas';
+import Item from './Item';
 import style from './Lista.module.scss';
 
-const Lista = () => {
-    
-    const listaDetarefas = [
-        {
-            tarefa: 'js',
-            tempo: '1:30:00'
-        }, 
-        {
-            tarefa: 'outra tarefa', 
-            tempo: '1:20:00'
-        }
-    ] 
+interface PropsLista {
+    tasks: PropsTarefas[],
+    selecionaTarefa: (tarefaSelecionada: PropsTarefas) => void
+}
 
+const Lista = ({tasks, selecionaTarefa}: PropsLista) => {
     return (
         <aside className={style.listaTarefas}>
             <h2>Lista de Tarefas</h2>
             <ul>
-                {listaDetarefas.map(item => (
-                    <li className={style.item} key={item.tarefa}>
-                        <h3>{item.tarefa}</h3>
-                        <span>{item.tempo}</span>
-                    </li>
+                {tasks.map(item => (
+                    <Item {...item} key={item.id} selecionaTarefa={selecionaTarefa} />
                 ))}
             </ul>
         </aside>
