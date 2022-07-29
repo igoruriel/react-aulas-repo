@@ -5,8 +5,8 @@ import './index.scss';
 import Cardapio from './paginas/Cardapio';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Cardapio />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<React.StrictMode>
+		<Cardapio />
+	</React.StrictMode>,
+	document.getElementById('root')
 );

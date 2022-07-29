@@ -12,21 +12,21 @@ interface PropsFiltros {
 
 const Filtros = ({filtro, setFiltro}: PropsFiltros) => {
 
-    function selecionaOpcao(opcao: PropsOpcao) {
-        if(opcao.id === filtro) return setFiltro(null)
-        return setFiltro(opcao.id)
-    }
+	function selecionaOpcao(opcao: PropsOpcao) {
+		if(opcao.id === filtro) return setFiltro(null);
+		return setFiltro(opcao.id);
+	}
 
-    return(
-        <div className={style.filtros}>
-            {opcoes.map((opcao) => 
-                <button className={classNames({
-                    [style.filtros__filtro]: true,
-                    [style['filtros__filtro--ativo']]: filtro === opcao.id
-                })} key={opcao.id} onClick={() => selecionaOpcao(opcao)}>{opcao.label}</button>
-            )}
-        </div>
-    )
-}
+	return(
+		<div className={style.filtros}>
+			{opcoes.map((opcao) => 
+				<button className={classNames({
+					[style.filtros__filtro]: true,
+					[style['filtros__filtro--ativo']]: filtro === opcao.id
+				})} key={opcao.id} onClick={() => selecionaOpcao(opcao)}>{opcao.label}</button>
+			)}
+		</div>
+	);
+};
 
 export default Filtros;

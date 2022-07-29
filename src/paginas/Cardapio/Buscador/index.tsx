@@ -8,12 +8,12 @@ interface PropsBuscador {
 }
 
 const Buscador = ({busca, setBusca}: PropsBuscador) => {
-    return (
-        <div className={style.buscador}>
-            <input value={busca} onChange={(e) => setBusca(e.target.value)} />
-            <CgSearch size={20} color='#4C4D5E'/>
-       </div>
-    )
-}
+	return (
+		<div className={style.buscador}>
+			<input value={busca} onChange={(e) => setBusca(e.target.value)} />
+			<CgSearch size={20} color='#4C4D5E'/>
+		</div>
+	);
+};
 
 export default Buscador;
