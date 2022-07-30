@@ -1,6 +1,6 @@
 import style from './Itens.module.scss';
 import Item from './Item';
-import itens from './itens.json';
+import itens from 'data/itens.json';
 import { useEffect, useState } from 'react';
 
 interface PropsItens {
