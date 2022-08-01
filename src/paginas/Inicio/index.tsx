@@ -1,6 +1,7 @@
 import cardapio from 'data/itens.json';
 import style from './Inicio.module.scss';
 import stylePadrao from 'assets/style/base/Tema.module.scss';
+import nossaCasaImg from 'assets/img/nossa_casa.png';
 
 const Inicio = () => {
 	let pratosRecomendados = [...cardapio];
@@ -19,6 +20,14 @@ const Inicio = () => {
 						</button>
 					</div>
 				))}
+			</div>
+			<h3 className={stylePadrao.titulo}>Nossa Casa</h3>
+			<div className={style.nossaCasa}>
+				<img src={nossaCasaImg} alt="mesa do nosso restaurante" />
+				<div className={style.nossaCasa__endereco}>
+					<span>Nome de Rua com a Marechal Ruy Pereira</span>
+					<span>Algum Lugar - UF</span>
+				</div>
 			</div>
 		</section>
 	);
