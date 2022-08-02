@@ -3,6 +3,7 @@ import stylePadrao from 'assets/style/base/Tema.module.scss';
 import classNames from 'classnames';
 import { ReactComponent as NotFoundImg } from 'assets/img/NotFound/not_found.svg';
 import { useNavigate } from 'react-router-dom';
+import BotaoVoltar from 'componentes/BotaoVoltar';
 
 const NotFound = () => {
     const navigate = useNavigate();
@@ -13,9 +14,7 @@ const NotFound = () => {
             [stylePadrao.container]: true
         })}>
             <div className={style.voltar}>
-                <button onClick={() => navigate(-1)} >
-                    {'< Voltar'}
-                </button>
+                <BotaoVoltar onClick={() => navigate(-1)} />
             </div>
             <NotFoundImg />
         </section>
