@@ -1,9 +1,10 @@
 import style from './Prato.module.scss';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Routes, Route } from 'react-router-dom';
 import cardapio from 'data/itens.json';
 import BotaoVoltar from 'componentes/BotaoVoltar';
 import TagsPrato from 'componentes/TagsPrato';
 import NotFound from 'paginas/NotFound';
+import Cabecalho from 'componentes/CabecalhoBanner';
 
 const Prato = () => {
     const navigate = useNavigate();
@@ -13,22 +14,28 @@ const Prato = () => {
     const { title, description, photo } = prato;
 
     return (
-        <>
-            <BotaoVoltar onClick={() => navigate(-1)} />
-            <section className={style.container}>
-                <h3 className={style.titulo}>{title}</h3>
+        <Routes>
+            <Route path='*' element={<Cabecalho />}>
+                <Route index element={
+                    <>
+                        <BotaoVoltar onClick={() => navigate(-1)} />
+                        <section className={style.container}>
+                            <h3 className={style.titulo}>{title}</h3>
 
-                <div className={style.imagem}>
-                    <img src={photo} alt={title} />
-                </div>
-                <div className={style.conteudo}>
-                    <div className={style.conteudo}>
-                        <p className={style.conteudo__descricao}>{description}</p>
-                    </div>
-                    <TagsPrato {...prato} />
-                </div>
-            </section>
-        </>
+                            <div className={style.imagem}>
+                                <img src={photo} alt={title} />
+                            </div>
+                            <div className={style.conteudo}>
+                                <div className={style.conteudo}>
+                                    <p className={style.conteudo__descricao}>{description}</p>
+                                </div>
+                                <TagsPrato {...prato} />
+                            </div>
+                        </section>
+                    </>
+                }/>
+            </Route>
+        </Routes>
     );
 };
 
